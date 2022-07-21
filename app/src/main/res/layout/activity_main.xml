@@ -7,45 +7,67 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linear_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:background="@color/purple"
+        android:paddingLeft="8dp"
+        android:paddingTop="16dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="16dp">
+
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_all_inclusive" />
+            style="@style/assets_linearMenu"
+            android:contentDescription="@string/phrases_all"
+            android:src="@drawable/ic_all_inclusive"
+            app:tint="@color/dark_purple" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_happy" />
+            style="@style/assets_linearMenu"
+            android:contentDescription="@string/phrases_motivation"
+            android:src="@drawable/ic_happy"
+            app:tint="@color/dark_purple" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_sunny" />
+            style="@style/assets_linearMenu"
+            android:contentDescription="@string/phrases_morning"
+            android:src="@drawable/ic_sunny"
+            app:tint="@color/dark_purple" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/cabin"
+        android:text="@string/hello_user"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
 
     <TextView
         android:id="@+id/text_phrase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:fontFamily="@font/cabin"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Motivation Motivation Motivation Motivation Motivation Motivation Motivation Motivation " />
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
     <View
         android:layout_width="128dp"
         android:layout_height="3dp"
         android:layout_below="@+id/text_phrase"
         android:layout_centerHorizontal="true"
-        android:background="@color/black" />
+        android:background="@color/dark_purple"
+        android:elevation="3dp" />
 
     <Button
         android:id="@+id/button_newPhrase"
@@ -54,6 +76,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:text="Nova frase" />
+        android:backgroundTint="@color/dark_purple"
+        android:fontFamily="@font/cabin"
+        android:text="@string/new_phrase" />
 
 </RelativeLayout>
