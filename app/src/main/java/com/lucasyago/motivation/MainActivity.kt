@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.hide()
 
         binding.buttonNewPhrase.setOnClickListener(this)
+
     }
 
     override fun onClick(view: View) {
