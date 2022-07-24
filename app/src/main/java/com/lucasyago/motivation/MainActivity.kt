@@ -1,5 +1,6 @@
 package com.lucasyago.motivation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -19,6 +20,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.buttonNewPhrase.setOnClickListener(this)
 
+        handleUserName()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun handleUserName() {
+        val userName = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
+        binding.textUserName.text = "Olá $userName"
     }
 
     override fun onClick(view: View) {
