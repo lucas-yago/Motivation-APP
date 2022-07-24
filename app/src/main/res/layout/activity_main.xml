@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <LinearLayout
         android:id="@+id/linear_menu"
@@ -18,22 +17,22 @@
 
 
         <ImageView
+            android:id="@+id/image_all"
             style="@style/assets_linearMenu"
             android:contentDescription="@string/phrases_all"
-            android:src="@drawable/ic_all_inclusive"
-            app:tint="@color/dark_purple" />
+            android:src="@drawable/ic_all_inclusive" />
 
         <ImageView
+            android:id="@+id/image_happy"
             style="@style/assets_linearMenu"
             android:contentDescription="@string/phrases_motivation"
-            android:src="@drawable/ic_happy"
-            app:tint="@color/dark_purple" />
+            android:src="@drawable/ic_happy" />
 
         <ImageView
+            android:id="@+id/image_sunny"
             style="@style/assets_linearMenu"
             android:contentDescription="@string/phrases_morning"
-            android:src="@drawable/ic_sunny"
-            app:tint="@color/dark_purple" />
+            android:src="@drawable/ic_sunny" />
 
     </LinearLayout>
 
@@ -58,7 +57,7 @@
         android:fontFamily="@font/cabin"
         android:gravity="center"
         android:padding="16dp"
-        android:text="@string/app_name"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="22sp" />
 
