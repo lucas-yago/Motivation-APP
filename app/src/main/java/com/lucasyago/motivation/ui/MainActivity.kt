@@ -1,6 +1,7 @@
 package com.lucasyago.motivation.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -23,27 +24,43 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         supportActionBar?.hide()
 
+        setListeners()
+        handleFilter(R.id.image_all)
+        nextPhrase()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        handleUserName()
+    }
+
+    private fun setListeners() {
         binding.imageAll.setOnClickListener(this)
         binding.imageHappy.setOnClickListener(this)
         binding.imageSunny.setOnClickListener(this)
         binding.buttonNewPhrase.setOnClickListener(this)
-
-        handleUserName()
-        handleFilter(R.id.image_all)
-        nextPhrase()
+        binding.textUserName.setOnClickListener(this)
     }
 
     @SuppressLint("SetTextI18n")
     private fun handleUserName() {
         val userName = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-        binding.textUserName.text = "Olá $userName"
+        binding.textUserName.text = "Olá, $userName"
     }
 
     override fun onClick(view: View) {
-        if (view.id == R.id.button_newPhrase) {
-            nextPhrase()
-        } else if (view.id in listOf(R.id.image_all, R.id.image_happy, R.id.image_sunny)) {
-            handleFilter(view.id)
+        val listId = listOf(R.id.image_all, R.id.image_happy, R.id.image_sunny)
+
+        when (view.id) {
+            R.id.button_newPhrase -> {
+                nextPhrase()
+            }
+            in listId -> {
+                handleFilter(view.id)
+            }
+            R.id.text_userName -> {
+                startActivity(Intent(this, UserActivity::class.java))
+            }
         }
     }
 
